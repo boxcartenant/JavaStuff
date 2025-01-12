@@ -1,5 +1,5 @@
-public class Main {//making a comment
-    public static void main(String[] args) { //asdf
-        System.out.println("Hello, World.");//asdfasdf
+public class Main {//just making comments...
+    public static void main(String[] args) { //...so that...
+        System.out.println("Hello, World.");//...I can test making names
     }
 }
