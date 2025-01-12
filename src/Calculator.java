@@ -42,7 +42,7 @@ public class Calculator {
             buttonPanel.add(button);
 
             // Add action listener to each button
-            button.addActionListener(d -> {
+            button.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     String command = e.getActionCommand();
@@ -58,12 +58,13 @@ public class Calculator {
                     } else if (command.equals("=")) {
                         // Perform the calculation
                         double secondNum = Double.parseDouble(display.getText());
-                        double result = switch (operator[0]) {
-                            case "+" -> num[0] + secondNum;
-                            case "-" -> num[0] - secondNum;
-                            case "*" -> num[0] * secondNum;
-                            case "/" -> num[0] / secondNum;
-                        };
+                        double result = 0;
+                        switch (operator[0]) {
+                            case "+": result = num[0] + secondNum; break;
+                            case "-": result = num[0] - secondNum; break;
+                            case "*": result = num[0] * secondNum; break;
+                            case "/": result = num[0] / secondNum; break;
+                        }
                         display.setText(String.valueOf(result));
                     } else if (command.equals("C")) {
                         // Clear the display
